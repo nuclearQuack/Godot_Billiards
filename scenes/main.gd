@@ -22,6 +22,7 @@ func load_images():
 func new_game():
 	generate_balls()
 	reset_cue_ball()
+	show_cue()
 	
 func generate_balls():
 	#setup game balls
@@ -44,6 +45,8 @@ func reset_cue_ball():
 	cue_ball.position = START_POS
 	cue_ball.get_node("Sprite2D").texture = ball_images.back()
 	
+func show_cue():
+	$Cue.position = cue_ball.position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
